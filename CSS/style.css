@@ -1,0 +1,114 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+    outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+    text-decoration: none;
+}
+del {
+    text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.wrap {
+    min-height: 1000px;
+    background: rgba(234,240,236,.77);
+}
+
+/* header CSS */
+.header {
+    height: 300px;
+    background: rgba(59,55,55,1);
+}
+.inner-header {
+    width: 75%;
+    height: 50%;
+    margin: 0 auto;
+    top: 30%;
+    position: relative;
+    background: rgb(198,87,60);
+}
+.header .inner-header .header-left {
+    width: 30%;
+    height: 150px;
+    line-height : 150px;
+    text-align: center;
+    float: left;
+    border: 1px solid black;
+}
+.header .inner-header .header-left img{
+    width: 100px;
+    height: 100px;
+    vertical-align : middle;
+}
+.header .inner-header .header-middle {
+    width: auto;
+    height: 150px;
+    float: left;
+    margin-left: 20px;
+    border: 1px solid black;
+}
+.header .inner-header .header-middle p {
+    color: rgb(236,201,17);
+    font-size: 14px;
+    padding: 4px;
+    margin-top: 10px;
+}
+.header .inner-header .header-middle input {
+    width: 200px;
+    height: 20px;
+    font-size: 16px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid rgb(236,201,17);
+    background: rgba(120,120,120,0.4);
+}
+.header .inner-header .header-right {
+    width: auto;
+    height: 150px;
+    float: left;
+    margin-left: 20px;
+    border: 1px solid black;
+}
+
+/* content CSS */
+
+/* footer CSS */
