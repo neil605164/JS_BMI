@@ -48,6 +48,9 @@ table {
     border-spacing: 0;
 }
 
+body{
+    font-family: "微軟正黑體";
+}
 .wrap {
     min-height: 1000px;
     background: rgba(234,240,236,.77);
@@ -59,7 +62,9 @@ table {
     background: rgba(59,55,55,1);
 }
 .inner-header {
-    width: 500px;
+    width: 100%;
+    max-width: 500px;
+    min-width: 300px;
     height: 50%;
     margin: 0 auto;
     top: 25%;
@@ -75,12 +80,13 @@ table {
     text-align: center;
     line-height : 150px;
     background: url('../Images/BMICLogo.png') no-repeat center;
+    background-size: 100%;
     /*border: 1px solid black;*/
 }
 .header .inner-header .header-middle {
     height: 150px;
     float: left;
-    margin-left: 5%;
+    margin-left: 30px;
     /*border: 1px solid black;*/
 }
 .header .inner-header .header-middle p {
@@ -94,6 +100,7 @@ table {
     height: 30px;
     padding: 5px;
     font-size: 16px;
+    /*保持最大寬度，不受到padding影響*/
     box-sizing: border-box;
     border-radius: 5px;
     border: 2px solid rgb(236,201,17);
@@ -112,7 +119,7 @@ table {
     text-align: center;
     line-height: 100px;
     background: rgb(244,194,19);
-    border-radius: 100px;
+    border-radius: 100em;
     border: 3px solid rgba(7,66,60,.51);
 }
 .header .inner-header .header-right .btn:hover {
