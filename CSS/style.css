@@ -16,7 +16,6 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 }
 body {
     line-height: 1;
-    font-family: "微軟正黑體"
 }
 ol, ul {
     list-style: none;
@@ -49,6 +48,9 @@ table {
     border-spacing: 0;
 }
 
+body{
+    font-family: "微軟正黑體";
+}
 .wrap {
     min-height: 1000px;
     background: rgba(234,240,236,.77);
@@ -71,15 +73,15 @@ table {
 }
 .header .inner-header .header-left {
     width: 25%;
-    mix-width: 117px;
+    max-width: 117px;
     height: 150px;
     float: left;
     margin-left: 20px;
     text-align: center;
     line-height : 150px;
-    background: url('https://neil605164.github.io/JS_BMI/Images/BMICLogo.png') no-repeat center;
-    /*border: 1px solid black;*/
+    background: url('../Images/BMICLogo.png') no-repeat center;
     background-size: 100%;
+    /*border: 1px solid black;*/
 }
 .header .inner-header .header-middle {
     width: 40%;
@@ -100,6 +102,7 @@ table {
     height: 30px;
     padding: 5px;
     font-size: 16px;
+    /*保持最大寬度，不受到padding影響*/
     box-sizing: border-box;
     border-radius: 5px;
     border: 2px solid rgb(236,201,17);
@@ -119,8 +122,7 @@ table {
     line-height: 100px;
     background: rgb(244,194,19);
     border-radius: 100em;
-    color: #50406b;
-    border: 3px solid #50406b;
+    border: 3px solid rgba(7,66,60,.51);
 }
 .header .inner-header .header-right .btn:hover {
     box-shadow: 1px 1px 1px rgba(147,145,152,0.7);
