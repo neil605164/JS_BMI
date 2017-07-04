@@ -64,19 +64,22 @@ table {
     margin: 0 auto;
     top: 25%;
     position: relative;
-    background: rgb(198,87,60);
+    /*background: rgb(198,87,60);*/
 }
 .header .inner-header .header-left {
     width: 25%;
     height: 150px;
     float: left;
+    margin-left: 20px;
     text-align: center;
     line-height : 150px;
+    background-size: 100%;
     background: url('../Images/BMICLogo.png') no-repeat center;
     /*border: 1px solid black;*/
 }
 .header .inner-header .header-middle {
-    width: auto;
+    width: 30%;
+    min-width: 92px;
     height: 150px;
     float: left;
     margin-left: 40px;
@@ -89,7 +92,7 @@ table {
     margin-top: 10px;
 }
 .header .inner-header .header-middle input {
-    width: 200px;
+    width: 100%;
     height: 20px;
     font-size: 16px;
     padding: 5px;
@@ -98,26 +101,28 @@ table {
     background: rgba(120,120,120,0.4);
 }
 .header .inner-header .header-right {
-    width: 100px;
-    height: 100px;
+    width: 10vw;
+    height: 10vw;
     float: left;
     margin-left: 40px;
-    font-size: 20px;
-    line-height: 100px;
+    font-size: 100%;
+    line-height: 500%;
     text-align: center;
-    top: 15%;
-    position: relative;
+    margin-top: 25px;
+    /*top: 15%;*/
+    /*position: relative;*/
     background: rgb(244,194,19);
     border-radius: 100px;
     border: 3px solid rgba(7,66,60,.51);
 }
 .header .inner-header .header-right:hover {
-    box-shadow: 2px 2px 2px 1px rgba(147,145,152,0.7);
+    box-shadow: 1px 1px 1px rgba(147,145,152,0.7);
 }
 .header .inner-header .header-right:active {
     width: 95px;
     height: 95px;
-    top: 20%;
+    margin-top: 30px;
+    /*top: 20%;*/
 }
 
 /* content CSS */
