@@ -122,7 +122,7 @@ body{
     text-align: center;
     background: rgb(244,194,19);
     border-radius: 100em;
-    border: 3px solid rgba(26,233,152,.77);
+    border: 3px solid rgb(244,194,19);
 }
 .header .inner-header .header-right .btn:hover {
     box-shadow: 1px 1px 1px rgba(147,145,152,0.7);
@@ -136,39 +136,60 @@ body{
 /* content CSS */
 .content {
     width: 100%;
-    background: rgba(161,86,205,.37);
+    /*background: rgba(161,86,205,.37);*/
 }
 .content .inner-content {
     width: 90%;
     min-width: 350px;
-    height: 900px;
+    height: auto;
     margin: 0 auto;
-    background: rgb(231,249,121);
+    /*background: rgb(231,249,121);*/
 }
 .content .inner-content .record {
-    height: 50px;
+    /*height: 50px;*/
     color: rgb(62,64,65);
     text-align: center;
     line-height: 50px;
     font-size: 19px;
     padding-top: 20px;
 }
-.content .inner-content .bmi_result_good table {
-    width: 100%;
-}
-.content .inner-content .bmi_result_good {
+.content .inner-content .bmi_result {
     width: 100%;
     height: 50px;
     color: rgb(62,64,65);
     line-height: 50px;
+}
+.content .inner-content .bmi_result table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0px 10px;
+}
+.content .inner-content .bmi_result tr {;
     background: white;
-    border-left: 3px solid rgb(16,199,64);
     box-shadow: 1px 1px 2px rgba(156,141,144,.83);
 }
-.content .inner-content .bmi_result_good td {
-overflow : hidden;
-text-overflow : ellipsis;
-white-space : nowrap;
+/*.content .inner-content .bmi_result_good td {
+overflow : hidden; --> 隱藏多出來的字
+text-overflow : ellipsis; --> 以...取代
+white-space : nowrap; --> 不換行
+}*/
+.content .inner-content .green {
+    border-left: 4px solid rgb(16,199,64);
+}
+.content .inner-content .blue {
+    border-left: 4px solid rgb(14,200,233);
+}
+.content .inner-content .orange {
+    border-left: 4px solid rgb(233,172,14);
+}
+.content .inner-content .dark-orange {
+    border-left: 4px solid rgb(233,119,26);
+}
+.content .inner-content .light-red {
+    border-left: 4px solid rgb(255,54,27);
+}
+.content .inner-content .red {
+    border-left: 4px solid rgb(233,14,14);
 }
 .content .inner-content .text-group0 {
     width: 10%;
@@ -198,9 +219,12 @@ white-space : nowrap;
     box-sizing: border-box;
 }
 
-
-
 /* footer CSS */
+.clearfix {
+    background-color: red;
+clear: both;
+overflow:hidden;
+}
 .footer {
     width: 100%;
     height: 100px;
