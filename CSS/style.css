@@ -221,9 +221,7 @@ white-space : nowrap; --> 不換行
 
 /* footer CSS */
 .clearfix {
-    background-color: red;
-clear: both;
-overflow:hidden;
+    clear: both;
 }
 .footer {
     width: 100%;
