@@ -281,10 +281,8 @@ body{
     background: url("../Images/icons_loop.png") no-repeat center rgb(233,14,14);
 }
 .header .inner-header .header-right .result-text {
-    left: 90%;
-    bottom: 50px;
+    width: 76px;
     font-size: 18px;
-    position: relative;
 }
 
 /* content CSS */
