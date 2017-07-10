@@ -280,6 +280,13 @@ body{
     border: 2px solid rgba(59,55,55,1);
     background: url("../Images/icons_loop.png") no-repeat center rgb(233,14,14);
 }
+.header .inner-header .header-right .restartimg:hover {
+    box-shadow: 1px 1px 1px rgba(148,148,148,.66);
+}
+.header .inner-header .header-right .restartimg:active {
+    top: -5%;
+    left: 71%;
+}
 .header .inner-header .header-right .result-text {
     width: 76px;
     font-size: 18px;
@@ -355,12 +362,12 @@ white-space : nowrap; --> 不換行
     padding-left: 3%;
     box-sizing: border-box;
 }
-.content .inner-content .text-group2 {
+.content .inner-content .text-span {
     float: left;
     font-size: 1.2vw;
     margin-right: 2%;
 }
-.content .inner-content .text-group3 {
+.content .inner-content .text-group2 {
     width: 17%;
     float: left;
     font-size: 1.2vw;
