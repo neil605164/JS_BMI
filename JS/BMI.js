@@ -19,11 +19,16 @@ btnclick.addEventListener('click', main, false);
 function main() {
     var height = parseFloat(document.querySelector('.height').value);
     var weight = parseFloat(document.querySelector('.weight').value);
+    if(isNaN(height) || isNaN(weight)){
+        return;
+    }
     var bmiResult = bmiCalculator(height/100, weight);
     bmiResult = bmiResult.toFixed(2);
     // 4.顯示本次計算的按鈕特效（原本按鈕須消失，並顯示特定的按鈕）
     var className = btnResult(bmiResult);
 
+    document.querySelector('.height').value = '';
+    document.querySelector('.weight').value = '';
     // 5.顯示localstorage的結果至content
     getLocalStorage(className);
 }
