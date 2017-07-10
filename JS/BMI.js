@@ -20,11 +20,11 @@ function main() {
     var height = parseFloat(document.querySelector('.height').value);
     var weight = parseFloat(document.querySelector('.weight').value);
     var bmiResult = bmiCalculator(height/100, weight);
-    bmiResult = bmiResult.toFixed(2)
+    bmiResult = bmiResult.toFixed(2);
     // 4.顯示本次計算的按鈕特效（原本按鈕須消失，並顯示特定的按鈕）
-    btnResult(bmiResult)
+    btnResult(bmiResult);
 
-    console.log(bmiResult);
+    // 3.將結果存入到localstorage中（包含身高體重）
 }
 
 // 2.取得值後，呼叫計算bmi的function，並回傳計算結果
@@ -35,60 +35,40 @@ function bmiCalculator(height, weight) {
 
 // 4.顯示本次計算的按鈕特效（原本按鈕須消失，並顯示特定的按鈕）
 function btnResult(bmiResult) {
+    var className = '';
+
     if( bmiResult < 18.5){
-        var className = 'greenbtn';
+        className = 'greenbtn';
         var resultText = '過輕';
         createHTML(bmiResult, className, resultText);
-
-        // 調整css樣式
-        document.querySelector('.btn').style.display = "none";
-        document.querySelector('.greenbtn').style.visibility = "visible";
     }
     if( 18.5 <= bmiResult && bmiResult < 24){
-        var className = 'bluebtn';
+        className = 'bluebtn';
         var resultText = '正常';
         createHTML(bmiResult, className, resultText);
-
-        // 調整css樣式
-        document.querySelector('.btn').style.display = "none";
-        document.querySelector('.bluebtn').style.visibility = "visible";
     }
     if( 24 <= bmiResult && bmiResult < 27){
-        var className = 'orangebtn';
+        className = 'orangebtn';
         var resultText = '過重';
         createHTML(bmiResult, className, resultText);
-
-        // 調整css樣式
-        document.querySelector('.btn').style.display = "none";
-        document.querySelector('.orangebtn').style.visibility = "visible";
     }
     if( 27 <= bmiResult && bmiResult < 30){
-        var className = 'dark-orangebtn';
+        className = 'dark-orangebtn';
         var resultText = '輕度肥胖';
         createHTML(bmiResult, className, resultText);
-
-        // 調整css樣式
-        document.querySelector('.btn').style.display = "none";
-        document.querySelector('.dark-orangebtn').style.visibility = "visible";
     }
     if( 30 <= bmiResult && bmiResult < 35){
-        var className = 'light-redbtn';
+        className = 'light-redbtn';
         var resultText = '中度肥胖';
         createHTML(bmiResult, className, resultText);
-
-        // 調整css樣式
-        document.querySelector('.btn').style.display = "none";
-        document.querySelector('.light-redbtn').style.visibility = "visible";
     }
     if(bmiResult >= 35){
-        var className = 'redbtn';
+        className = 'redbtn';
         var resultText = '重度肥胖';
         createHTML(bmiResult, className, resultText);
-
-        // 調整css樣式
-        document.querySelector('.btn').style.display = "none";
-        document.querySelector('.redbtn').style.visibility = "visible";
     }
+    var restartImg = document.querySelector('.restartimg');
+    restartImg.addEventListener('click', function(){btnRestart(className)}, false);
 }
 
 function createHTML(bmiResult, className, resultText) {
@@ -103,4 +83,14 @@ function createHTML(bmiResult, className, resultText) {
         '<div class="result-text">'+resultText+'</div>'+
         '</div>';
     btnResult.innerHTML = btnResultStr;
+
+    // 調整css樣式
+    document.querySelector('.btn').style.display = "none";
+    document.querySelector('.'+className+'').style.visibility = "visible";
+}
+
+function btnRestart(className) {
+    // 調整css樣式
+    document.querySelector('.btn').style.display = "inline-block";
+    document.querySelector('.'+className+'').style.visibility = "hidden";
 }
