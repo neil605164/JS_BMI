@@ -142,7 +142,7 @@ body{
     font-size: 12px;
 }
 /*header 觸發js後顯示的樣式*/
-.header .inner-header .header-right .greenbtn {
+.header .inner-header .header-right .green {
     color: rgb(16,199,64);
     width: 70px;
     height: 70px;
@@ -155,7 +155,7 @@ body{
     border: 3px solid rgb(16,199,64);
 
 }
-.header .inner-header .header-right .greenbtn .restartimg {
+.header .inner-header .header-right .green .restartimg {
     width: 20px;
     height: 20px;
     border-radius: 100em;
@@ -165,7 +165,7 @@ body{
     border: 2px solid rgba(59,55,55,1);
     background: url("../Images/icons_loop.png") no-repeat center rgb(16,199,64);
 }
-.header .inner-header .header-right .bluebtn {
+.header .inner-header .header-right .blue {
     color: rgb(14,200,233);
     width: 70px;
     height: 70px;
@@ -178,7 +178,7 @@ body{
     border: 3px solid rgb(14,200,233);
 
 }
-.header .inner-header .header-right .bluebtn .restartimg {
+.header .inner-header .header-right .blue .restartimg {
     width: 20px;
     height: 20px;
     border-radius: 100em;
@@ -188,7 +188,7 @@ body{
     border: 2px solid rgba(59,55,55,1);
     background: url("../Images/icons_loop.png") no-repeat center rgb(14,200,233);
 }
-.header .inner-header .header-right .orangebtn {
+.header .inner-header .header-right .orange {
     color: rgb(233,172,14);
     width: 70px;
     height: 70px;
@@ -201,7 +201,7 @@ body{
     border: 3px solid rgb(233,172,14);
 
 }
-.header .inner-header .header-right .orangebtn .restartimg {
+.header .inner-header .header-right .orange .restartimg {
     width: 20px;
     height: 20px;
     border-radius: 100em;
@@ -211,7 +211,7 @@ body{
     border: 2px solid rgba(59,55,55,1);
     background: url("../Images/icons_loop.png") no-repeat center rgb(233,172,14);
 }
-.header .inner-header .header-right .dark-orangebtn {
+.header .inner-header .header-right .dark-orange {
     color: rgb(233,119,26);
     width: 70px;
     height: 70px;
@@ -224,7 +224,7 @@ body{
     border: 3px solid rgb(233,119,26);
 
 }
-.header .inner-header .header-right .dark-orangebtn .restartimg {
+.header .inner-header .header-right .dark-orange .restartimg {
     width: 20px;
     height: 20px;
     border-radius: 100em;
@@ -234,7 +234,7 @@ body{
     border: 2px solid rgba(59,55,55,1);
     background: url("../Images/icons_loop.png") no-repeat center rgb(233,119,26);
 }
-.header .inner-header .header-right .light-redbtn {
+.header .inner-header .header-right .light-red {
     color: rgb(255,54,27);
     width: 70px;
     height: 70px;
@@ -247,7 +247,7 @@ body{
     border: 3px solid rgb(255,54,27);
 
 }
-.header .inner-header .header-right .light-redbtn .restartimg {
+.header .inner-header .header-right .light-red .restartimg {
     width: 20px;
     height: 20px;
     border-radius: 100em;
@@ -257,7 +257,7 @@ body{
     border: 2px solid rgba(59,55,55,1);
     background: url("../Images/icons_loop.png") no-repeat center rgb(255,54,27);
 }
-.header .inner-header .header-right .redbtn {
+.header .inner-header .header-right .red {
     color: rgb(233,14,14);
     width: 70px;
     height: 70px;
@@ -270,7 +270,7 @@ body{
     border: 3px solid rgb(233,14,14);
 
 }
-.header .inner-header .header-right .redbtn .restartimg {
+.header .inner-header .header-right .red .restartimg {
     width: 20px;
     height: 20px;
     border-radius: 100em;

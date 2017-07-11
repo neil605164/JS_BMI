@@ -47,32 +47,32 @@ function btnResult(bmiResult) {
     var resultText = '';
 
     if( bmiResult < 18.5){
-        className = 'greenbtn';
+        className = 'green';
         resultText = '過輕';
         createHTML(bmiResult, className, resultText);
     }
     if( 18.5 <= bmiResult && bmiResult < 24){
-        className = 'bluebtn';
+        className = 'blue';
         resultText = '正常';
         createHTML(bmiResult, className, resultText);
     }
     if( 24 <= bmiResult && bmiResult < 27){
-        className = 'orangebtn';
+        className = 'orange';
         resultText = '過重';
         createHTML(bmiResult, className, resultText);
     }
     if( 27 <= bmiResult && bmiResult < 30){
-        className = 'dark-orangebtn';
+        className = 'dark-orange';
         resultText = '輕度肥胖';
         createHTML(bmiResult, className, resultText);
     }
     if( 30 <= bmiResult && bmiResult < 35){
-        className = 'light-redbtn';
+        className = 'light-red';
         resultText = '中度肥胖';
         createHTML(bmiResult, className, resultText);
     }
     if(bmiResult >= 35){
-        className = 'redbtn';
+        className = 'red';
         resultText = '重度肥胖';
         createHTML(bmiResult, className, resultText);
     }
@@ -115,10 +115,54 @@ function setLocalStorage(bmiResult, resultText) {
 }
 
 function getLocalStorage(className) {
-    var mytr = document.createElement('tr');
-    var mytd = document.createElement('td');
-    for(var i=0; i<=3; i++){
-        mytd.setAttribute('class', 'text-group'[i]);
-    }
+    //取得今日日期
+    var date = getNowDate();
 
+    var mytable = document.querySelector('table');
+    // 建立節點
+    var mytr = document.createElement('tr');
+    var mytd1 = document.createElement('td');
+    var mytd2 = document.createElement('td');
+    var mytd3 = document.createElement('td');
+    var mytd4 = document.createElement('td');
+    var mytd5 = document.createElement('td');
+    var myspan1 = document.createElement('span');
+    var myspan2 = document.createElement('span');
+    var myspan3 = document.createElement('span');
+
+    //設定class名稱
+    mytd1.setAttribute('class', 'text-group0 ' + className);
+    mytd2.setAttribute('class', 'text-group1');
+    mytd3.setAttribute('class', 'text-group1');
+    mytd4.setAttribute('class', 'text-group1');
+    mytd5.setAttribute('class', 'text-group2');
+    myspan1.setAttribute('class', 'text-span');
+    myspan2.setAttribute('class', 'text-span');
+    myspan3.setAttribute('class', 'text-span');
+
+    // 設定內容
+    mytd1.textContent = localStorage.getItem("status");
+    mytd2.textContent = localStorage.getItem("bmiResult");
+    mytd3.textContent = localStorage.getItem("weight")+'KG';
+    mytd4.textContent = localStorage.getItem("height")+'cm';
+    mytd5.textContent = date;
+    myspan1.textContent = 'BMI';
+    myspan2.textContent = 'weight';
+    myspan3.textContent = 'height';
+
+    mytable.appendChild(mytr).appendChild(mytd1);
+    mytable.appendChild(mytr).appendChild(mytd2).appendChild(myspan1);
+    mytable.appendChild(mytr).appendChild(mytd3).appendChild(myspan2);
+    mytable.appendChild(mytr).appendChild(mytd4).appendChild(myspan3);
+    mytable.appendChild(mytr).appendChild(mytd5);
+}
+
+function getNowDate(){
+    var Today = new Date();
+    var Year = Today.getFullYear();
+    var Month = (((Today.getMonth()+1) <10) ? "0" : "") + (Today.getMonth()+1);
+    var Day = Today.getDate() ;
+
+    Today = Month + '-' + Day + '-' + Year;
+    return Today;
 }
