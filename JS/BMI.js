@@ -10,7 +10,20 @@
 // BMI <30 輕度肥胖
 // BMI <35 中度肥胖
 // BMI >35 重度肥胖
+var BMI = {
+    bmiResult:[],
+    status:[],
+    className:[],
+    height:[],
+    weight:[],
+    date:[],
+};
 
+
+// 5.顯示localstorage的結果至content
+if(localStorage.getItem('BMI') !== null){
+    window.addEventListener('load', getLocalStorage, false);
+}
 
 // 1.觸發按鈕後，取得頁面的值（記得檢查是否為數字）
 var btnclick = document.querySelector('.btn');
@@ -29,15 +42,16 @@ function main() {
 
     document.querySelector('.height').value = '';
     document.querySelector('.weight').value = '';
+
     // 5.顯示localstorage的結果至content
-    getLocalStorage(className);
+    getLocalStorage()
 }
 
 // 2.取得值後，呼叫計算bmi的function，並回傳計算結果
 function bmiCalculator(height, weight) {
     var count = weight/(height*height);
-    localStorage.setItem("height", height);
-    localStorage.setItem("weight", weight);
+    BMI.height.push(height);
+    BMI.weight.push(weight);
     return count;
 }
 
@@ -80,7 +94,7 @@ function btnResult(bmiResult) {
     restartImg.addEventListener('click', function(){btnRestart(className)}, false);
 
     // 3.將結果存入到localstorage中（包含身高體重）
-    setLocalStorage(bmiResult, resultText);
+    setLocalStorage(bmiResult, resultText, className);
 
     return className;
 }
@@ -109,52 +123,36 @@ function btnRestart(className) {
     document.querySelector('.'+className+'').style.visibility = "hidden";
 }
 
-function setLocalStorage(bmiResult, resultText) {
-    localStorage.setItem("bmiResult", bmiResult);
-    localStorage.setItem("status", resultText);
-}
-
-function getLocalStorage(className) {
+function setLocalStorage(bmiResult, resultText, className) {
     //取得今日日期
     var date = getNowDate();
+    BMI.bmiResult.push(bmiResult);
+    BMI.status.push(resultText);
+    BMI.className.push(className);
+    BMI.date.push(date);
 
+    // 將字串化的值存入localStorage
+    localStorage.setItem("BMI", JSON.stringify(BMI));
+
+}
+
+function getLocalStorage() {
+    var BMI_Str = '';
+    var BMIData = localStorage.getItem('BMI');
+    var BMI = JSON.parse(BMIData);
     var mytable = document.querySelector('table');
-    // 建立節點
-    var mytr = document.createElement('tr');
-    var mytd1 = document.createElement('td');
-    var mytd2 = document.createElement('td');
-    var mytd3 = document.createElement('td');
-    var mytd4 = document.createElement('td');
-    var mytd5 = document.createElement('td');
-    var myspan1 = document.createElement('span');
-    var myspan2 = document.createElement('span');
-    var myspan3 = document.createElement('span');
 
-    //設定class名稱
-    mytd1.setAttribute('class', 'text-group0 ' + className);
-    mytd2.setAttribute('class', 'text-group1');
-    mytd3.setAttribute('class', 'text-group1');
-    mytd4.setAttribute('class', 'text-group1');
-    mytd5.setAttribute('class', 'text-group2');
-    myspan1.setAttribute('class', 'text-span');
-    myspan2.setAttribute('class', 'text-span');
-    myspan3.setAttribute('class', 'text-span');
-
-    // 設定內容
-    mytd1.textContent = localStorage.getItem("status");
-    mytd2.textContent = localStorage.getItem("bmiResult");
-    mytd3.textContent = localStorage.getItem("weight")+'KG';
-    mytd4.textContent = localStorage.getItem("height")+'cm';
-    mytd5.textContent = date;
-    myspan1.textContent = 'BMI';
-    myspan2.textContent = 'weight';
-    myspan3.textContent = 'height';
-
-    mytable.appendChild(mytr).appendChild(mytd1);
-    mytable.appendChild(mytr).appendChild(mytd2).appendChild(myspan1);
-    mytable.appendChild(mytr).appendChild(mytd3).appendChild(myspan2);
-    mytable.appendChild(mytr).appendChild(mytd4).appendChild(myspan3);
-    mytable.appendChild(mytr).appendChild(mytd5);
+    for(var i=0; i<BMI.bmiResult.length; i++){
+        BMI_Str +=
+            '<tr>'+
+            '<td class="text-group0 '+BMI.className[i]+'">'+BMI.status[i]+'</td>'+
+            '<td class="text-group1"><span class="text-span">BMI</span>'+BMI.bmiResult[i]+'</td>'+
+            '<td class="text-group1"><span class="text-span">weight</span>'+BMI.weight[i]+'KG</td>'+
+            '<td class="text-group1"><span class="text-span">height</span>'+BMI.height[i]+'cm</td>'+
+            '<td class="text-group2">'+BMI.date[i]+'</td>'+
+            '</tr>';
+    }
+    mytable.innerHTML = BMI_Str;
 }
 
 function getNowDate(){
